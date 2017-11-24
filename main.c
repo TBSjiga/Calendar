@@ -2,7 +2,7 @@
 
 int main()
 {
-	int q , m , k, h, a, b, c;
+	int q , m , k, h;
 	printf ("Please, enter the date. (dd mm yyyy.) \n");
 	scanf ("%d %d %d " , &q , &m , &k);
 	if (m==1)
@@ -15,10 +15,7 @@ int main()
 		m=14;
 		k--;
 	}
-	a=(q+(13*(m+1)))/5;
-	b=(k%100);
-	c=(k/100);
-	h=(a+b+(b/4)+(c/4)-2*c)%7;
+	h=((q+(13*(m+1))/5)+(k%100)+((k%100)/4)+(k/400)-2*(k/100))%7;
 	if (h==0)
 	{
 		printf ("Saturday");
